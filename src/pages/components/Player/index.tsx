@@ -1,6 +1,5 @@
-import {
+import PlayerContainer, {
   Header,
-  PlayerContainer,
   EmptyPlayer,
   StrongText,
   Footer,
@@ -13,7 +12,7 @@ import {
   PlayNextButton,
   RepeatButton,
   Slider,
-} from "./styled.module";
+} from "./styles";
 
 export default function Player() {
   return (
@@ -27,7 +26,7 @@ export default function Player() {
         <StrongText>Selecione um podcast para ouvir</StrongText>
       </EmptyPlayer>
 
-      <Footer className="empty">
+      <Footer>
         <Progress>
           <span>00:00</span>
           <Slider>

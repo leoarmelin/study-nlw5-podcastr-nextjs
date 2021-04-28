@@ -1,6 +1,6 @@
 import format from "date-fns/format";
 import ptBR from "date-fns/locale/pt-BR";
-import HeaderContainer from "./styled.module";
+import HeaderContainer from "./styles";
 
 export default function Header() {
   const currentDate = format(new Date(), "EEEEEE, d MMMM", {

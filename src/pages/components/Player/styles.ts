@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PlayerContainer = styled.div`
+export default styled.div`
   width: 26.5rem;
   height: 100vh;
   padding: 3rem 4rem;
@@ -105,5 +105,3 @@ export const PlayButton = styled(StyledButton)`
 export const PlayNextButton = styled(StyledButton)``;
 
 export const RepeatButton = styled(StyledButton)``;
-
-export default () => <h1></h1>;

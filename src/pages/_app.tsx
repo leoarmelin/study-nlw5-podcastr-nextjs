@@ -7,6 +7,7 @@ import GlobalStyle from "../styles/global";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <GlobalStyle />
       <Wrapper>
         <main>
           <Header />
@@ -14,7 +15,6 @@ function MyApp({ Component, pageProps }) {
         </main>
         <Player />
       </Wrapper>
-      <GlobalStyle />
     </>
   );
 }
