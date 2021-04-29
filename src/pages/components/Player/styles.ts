@@ -1,4 +1,7 @@
+import Image from "next/image";
 import styled from "styled-components";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 export default styled.div`
   width: 26.5rem;
@@ -67,9 +70,11 @@ export const Progress = styled.div`
   }
 `;
 
-export const Slider = styled.div`
+export const SliderContainer = styled.div`
   flex: 1;
 `;
+
+export const PlayerSlider = styled(Slider)``;
 
 export const EmptySlider = styled.div`
   width: 100%;
@@ -89,6 +94,15 @@ const StyledButton = styled.button`
   background: transparent;
   border: 0;
   font-size: 0;
+  transition: filter 0.2s;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.8);
+  }
 `;
 
 export const ShuffleButton = styled(StyledButton)``;
@@ -100,8 +114,34 @@ export const PlayButton = styled(StyledButton)`
   height: 4rem;
   border-radius: 1rem;
   background: var(--purple-400);
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.95);
+  }
 `;
 
 export const PlayNextButton = styled(StyledButton)``;
 
 export const RepeatButton = styled(StyledButton)``;
+
+export const FilledPlayer = styled.div`
+  text-align: center;
+`;
+
+export const PlayingImage = styled(Image)`
+  border-radius: 1.5rem;
+`;
+
+export const PlayingTitle = styled.strong`
+  display: block;
+  margin-top: 2rem;
+  font: 600 1.25rem Lexand, sans-serif;
+  line-height: 1.75rem;
+`;
+
+export const PlayingMembers = styled.span`
+  display: block;
+  margin-top: 1rem;
+  opacity: 0.6;
+  line-height: 1.5rem;
+`;

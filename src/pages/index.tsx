@@ -22,6 +22,8 @@ import HomeContainer, {
   SmallPlayButton,
   SmallPlayButtonImage,
 } from "./home.module";
+import { useContext } from "react";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 interface Episode {
   id: string;
@@ -41,6 +43,8 @@ interface HomeProps {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
+  const { play } = useContext(PlayerContext);
+
   return (
     <HomeContainer>
       <LatestEpisodesContainer>
@@ -67,7 +71,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <EpisodeText>{episode.durationAsString}</EpisodeText>
                 </EpisodeDetailsContainer>
 
-                <PlayButton type="button">
+                <PlayButton type="button" onClick={() => play(episode)}>
                   <PlayButtonImage src="/play-green.svg" alt="Tocar episódio" />
                 </PlayButton>
               </li>
